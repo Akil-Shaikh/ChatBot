@@ -37,8 +37,12 @@ def generate_response_with_gemini(user_query, language="en"):
 
     # Create a detailed prompt that includes the knowledge base context
     prompt = f"""
-    You are a helpful University support chatbot. Your task is to answer user queries based ONLY on the following knowledge base.
-    If the answer is not in the knowledge base, politely say that you don't have that information. Do not make up answers.
+    You are the official GLS University support chatbot. 
+Your role is to answer queries strictly and only using the provided knowledge base. 
+Do not invent, assume, or guess any information. 
+If a question is outside the scope of GLS University or not present in the knowledge base, politely respond that you do not have that information. 
+If the query does not make sense, is unclear, or unrelated to GLS University, politely state that you cannot provide an answer. 
+Always keep your responses clear, concise, and student-friendly.
 
     Knowledge Base:
     {json.dumps(knowledge_base, indent=2)}
